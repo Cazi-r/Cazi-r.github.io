@@ -362,21 +362,20 @@ button{font:inherit}
 .org{margin-left:auto;color:var(--muted);font-family:var(--mono);font-size:.5rem;font-weight:900;letter-spacing:.04em}
 
 /* ================= video oynatici ================= */
-.media-shell{
-  flex:1;min-height:0;
+.media-shell{display:grid;grid-template-rows:minmax(0,1fr) auto auto;gap:0;overflow:hidden;flex:1;min-height:0;
   background-color:var(--body);
   background-image:linear-gradient(var(--body-grid) 1px,transparent 1px),
                    linear-gradient(90deg,var(--body-grid) 1px,transparent 1px);
-  background-size:12px 12px;padding:12px;
-}
+  background-size:12px 12px;padding:12px;}
 .video-frame{
-  aspect-ratio:16/9;border:3px solid var(--outline);width:100%;background:#0c0d0e;
+  aspect-ratio:auto;min-height:0;border:3px solid var(--outline);width:100%;background:#0c0d0e;
   box-shadow:inset 4px 4px 0 #000,inset -4px -4px 0 #4d4e4b,4px 4px 0 var(--outline);
   place-items:center;display:grid;position:relative;overflow:hidden;
 }
 .video-frame video{object-fit:contain;cursor:pointer;background:#050607;width:100%;height:100%;display:block}
 .video-scanlines{z-index:2;pointer-events:none;opacity:.17;mix-blend-mode:soft-light;
   background:repeating-linear-gradient(#0000 0 3px,#ffffff21 3px 4px);position:absolute;inset:0}
+.video-placeholder[hidden]{display:none!important}
 .video-placeholder{
   position:absolute;inset:0;z-index:1;display:grid;place-content:center;gap:9px;text-align:center;
   padding:18px;color:#9fb0b8;font-family:var(--mono);font-size:.62rem;font-weight:800;letter-spacing:.07em;
@@ -2090,7 +2089,7 @@ document.querySelectorAll(".contact-card,.go,.filt").forEach(a=>a.addEventListen
     });
     guncelle();
   }
-  document.querySelectorAll(".window-body,.snake-shell,.media-shell").forEach(function(el){
+  document.querySelectorAll(".window-body,.snake-shell").forEach(function(el){
     el.classList.add("scrollport"); kur(el);
   });
 })();
