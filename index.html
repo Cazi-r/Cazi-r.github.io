@@ -278,6 +278,8 @@ button{font:inherit}
 .mon-note{font-family:var(--font-mono);font-size:.5rem;font-weight:900;letter-spacing:.06em;
   color:var(--muted);text-align:right;line-height:1.8;margin:0}
 .procs{padding:12px 15px 15px;flex-direction:column;gap:7px;display:flex}
+.proc-more{font-family:var(--font-mono);font-size:.5rem;font-weight:900;letter-spacing:.06em;
+  color:var(--muted);margin:3px 0 0;padding-top:7px;border-top:2px dotted var(--strip-inset)}
 .proc{grid-template-columns:130px minmax(0,1fr) 40px;gap:9px;align-items:center;display:grid;
   font-family:var(--font-mono);font-size:.6rem;font-weight:800;letter-spacing:.02em}
 .proc-n{align-items:center;gap:6px;color:var(--copy);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:flex}
@@ -732,6 +734,23 @@ button{font:inherit}
   to{transform:translate(-5px,-4px)rotate(-4deg)scaleX(.98)}
 }
 
+/* ---- yeniden boyutlandirma tutamaklari ---- */
+.window-resize-handle{position:absolute;z-index:7;touch-action:none;pointer-events:auto}
+.resize-n {top:0;left:16px;right:16px;height:6px;cursor:ns-resize}
+.resize-s {bottom:0;left:16px;right:16px;height:6px;cursor:ns-resize}
+.resize-w {left:0;top:16px;bottom:16px;width:6px;cursor:ew-resize}
+.resize-e {right:0;top:16px;bottom:16px;width:6px;cursor:ew-resize}
+.resize-nw{top:0;left:0;width:16px;height:16px;cursor:nwse-resize}
+.resize-ne{top:0;right:0;width:16px;height:16px;cursor:nesw-resize}
+.resize-sw{bottom:0;left:0;width:16px;height:16px;cursor:nesw-resize}
+.resize-se{bottom:0;right:0;width:16px;height:16px;cursor:nwse-resize}
+.resize-se:after{                       /* retro tutamak cizgileri */
+  content:"";position:absolute;inset:4px 3px 3px 4px;
+  background:repeating-linear-gradient(135deg,
+    var(--outline) 0 1px,transparent 1px 2px,#ffffffcc 2px 3px,transparent 3px 4px)}
+.desktop-window.is-resizing{user-select:none}
+.desktop-window.is-maximized .window-resize-handle{display:none}
+
 /* ================= pencere konumlari ================= */
 /* tapeq mantigi: boyutlar sabit piksel, icerigi tam kapsayacak kadar buyuk ->
    pencerelerde kaydirma cubugu cikmaz. Pencereler bilerek ust uste biner,
@@ -771,7 +790,7 @@ button{font:inherit}
   .window-body,.snake-shell,.media-shell{overflow:visible!important;max-height:none!important;flex:none}
   /* dar ekranda arcade kaydirma cubugu kapali: govde kendi yuksekliginde aksin */
   .scrollport>.scroll-inner{position:static;inset:auto;overflow:visible;padding-right:0}
-  .rs{display:none}
+  .rs,.window-resize-handle{display:none}
   .window-body{max-height:none!important;overflow:visible!important}
   .home-window{order:1}.proj-window{order:2}.snake-window{order:3}.media-window{order:4}.mon-window{order:5}
   .snake-window .snake-shell{max-height:none!important;overflow:visible!important}
@@ -926,7 +945,7 @@ button{font:inherit}
       </div>
       <div class="window-body single">
         <div class="panel">
-          <div class="panel-title"><span>COMMIT_ACTIVITY.DAT</span><span>17 PROC</span></div>
+          <div class="panel-title"><span>COMMIT_ACTIVITY.DAT</span><span>TOP 8</span></div>
           <div class="mon-head">
             <div><span class="mon-total">1413</span><sub data-i18n="toplamCommit">TOTAL COMMITS</sub></div>
             <p class="mon-note"><span data-i18n="lgAcik">■ OPEN SOURCE</span><br><span data-i18n="lgOzel">■ PRIVATE</span></p>
@@ -1535,11 +1554,17 @@ const pAcik=p=>(DIL==="tr"?p.d:(p.dEn||p.d));
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 
 const mon=PROJECTS.slice().sort((a,b)=>b.c-a.c), max=Math.max(...mon.map(p=>p.c));
-document.getElementById("procs").innerHTML=mon.map(p=>
-  `<div class="proc ${p.open?"":"closed"}"><span class="proc-n" title="${esc(p.n)}"><i></i>${esc(p.n)}</span>`+
-  `<span class="proc-bar"><span class="proc-fill" data-w="${(p.c/max*100).toFixed(1)}"></span></span>`+
-  `<span class="proc-v">${p.c}</span></div>`).join("");
-setTimeout(()=>document.querySelectorAll(".proc-fill").forEach(f=>{f.style.width=f.dataset.w+"%"}),90);
+const MON_ADET=8;
+function cizMonitor(){
+  const kalan=mon.length-MON_ADET;
+  document.getElementById("procs").innerHTML=mon.slice(0,MON_ADET).map(p=>
+    `<div class="proc ${p.open?"":"closed"}"><span class="proc-n" title="${esc(p.n)}"><i></i>${esc(p.n)}</span>`+
+    `<span class="proc-bar"><span class="proc-fill" data-w="${(p.c/max*100).toFixed(1)}"></span></span>`+
+    `<span class="proc-v">${p.c}</span></div>`).join("")+
+    (kalan>0?`<p class="proc-more">+${kalan} ${DIL==="tr"?"proje daha · projects/ içinde":"more · see projects/"}</p>`:"");
+  setTimeout(()=>document.querySelectorAll(".proc-fill").forEach(f=>{f.style.width=f.dataset.w+"%"}),90);
+}
+cizMonitor();
 
 const plist=document.getElementById("plist"), flDetail=document.getElementById("flDetail");
 plist.innerHTML=PROJECTS.map((p,i)=>
@@ -1746,6 +1771,52 @@ document.querySelectorAll(".desktop-window").forEach(win=>{
   });
 });
 
+/* ============ pencere yeniden boyutlandirma ============ */
+(function(){
+  var EN_AZ_G=320, EN_AZ_Y=200;
+  var YONLER=["n","e","s","w","ne","se","sw","nw"];
+  document.querySelectorAll(".desktop-window").forEach(function(win){
+    YONLER.forEach(function(y){
+      var el=document.createElement("div");
+      el.className="window-resize-handle resize-"+y;
+      el.setAttribute("aria-hidden","true");
+      win.appendChild(el);
+      var pid=null,sx=0,sy=0,bg=0,by=0,bl=0,bt=0;
+      el.addEventListener("pointerdown",function(e){
+        if(e.button!==0||!wide()||win.classList.contains("is-maximized"))return;
+        var d=desk.getBoundingClientRect(), r=win.getBoundingClientRect();
+        pid=e.pointerId; sx=e.clientX; sy=e.clientY;
+        bg=r.width; by=r.height; bl=r.left-d.left; bt=r.top-d.top;
+        win.style.right="auto"; win.style.bottom="auto";
+        win.style.left=bl+"px"; win.style.top=bt+"px";
+        win.style.width=bg+"px"; win.style.height=by+"px";
+        win.classList.add("is-resizing"); raise(win);
+        try{ el.setPointerCapture(e.pointerId) }catch(_){}
+        e.preventDefault(); e.stopPropagation();
+      });
+      el.addEventListener("pointermove",function(e){
+        if(e.pointerId!==pid)return;
+        var dx=e.clientX-sx, dy=e.clientY-sy;
+        var g=bg, yk=by, l=bl, t=bt;
+        if(y.indexOf("e")>=0) g=Math.max(EN_AZ_G,bg+dx);
+        if(y.indexOf("s")>=0) yk=Math.max(EN_AZ_Y,by+dy);
+        if(y.indexOf("w")>=0){ g=Math.max(EN_AZ_G,bg-dx); l=bl+(bg-g); }
+        if(y.indexOf("n")>=0){ yk=Math.max(EN_AZ_Y,by-dy); t=Math.max(0,bt+(by-yk)); }
+        win.style.width=Math.round(g)+"px";   win.style.height=Math.round(yk)+"px";
+        win.style.left =Math.round(l)+"px";   win.style.top   =Math.round(t)+"px";
+      });
+      ["pointerup","pointercancel"].forEach(function(ev){
+        el.addEventListener(ev,function(e){
+          if(e.pointerId!==pid)return; pid=null;
+          win.classList.remove("is-resizing");
+          if(el.hasPointerCapture(e.pointerId)) el.releasePointerCapture(e.pointerId);
+          if(window.SND) SND.tick();
+        });
+      });
+    });
+  });
+})();
+
 /* ============ ses ============ */
 const SND=(()=>{
   let ctx=null,on=false;
@@ -1766,6 +1837,7 @@ const SND=(()=>{
     open:()=>{tone(560,.07,"triangle",.06);setTimeout(()=>tone(880,.08,"triangle",.05),55)},
     close:()=>{tone(760,.07,"triangle",.055);setTimeout(()=>tone(420,.09,"triangle",.045),55)}};
 })();
+window.SND=SND;   /* modul olmayan script'te const window'a dusmez; window.SND kontrolleri bunu bekliyor */
 /* --- ortam sesi: CRT'li eski bilgisayar. Ugultu degil, cizirtili:
    1) CRT flyback isligi 15625 Hz  2) bant gecirgen statik cizirti
    3) rastgele elektrostatik citirtilar  4) cok kisik sebeke humu --- */
