@@ -1,5 +1,13 @@
 <meta charset="utf-8">
 <title>Yusuf Erdoğdu</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Yusuf Erdoğdu — developer in Istanbul building enterprise web applications with .NET and React. 17 projects, Flutter apps, ML models and two Minecraft mods.">
+<meta name="author" content="Yusuf Erdoğdu">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://cazi-r.github.io/">
+<meta property="og:title" content="Yusuf Erdoğdu — .NET &amp; React developer">
+<meta property="og:description" content="Enterprise web applications, Flutter apps, ML models and two Minecraft mods. 17 projects, browsable as a retro desktop.">
+<meta name="twitter:card" content="summary">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap">
@@ -235,6 +243,7 @@ button{font:inherit}
 .page-tags span:last-child{background:var(--pink)}
 
 .contact-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;padding:14px;display:grid}
+.contact-grid>:last-child{grid-column:1/-1}
 .contact-card{
   border:3px solid var(--outline);width:100%;min-width:0;min-height:64px;
   color:var(--outline);text-align:left;cursor:pointer;box-shadow:4px 4px 0 var(--outline);
@@ -761,7 +770,7 @@ button{font:inherit}
 .proj-window {z-index:1;left:clamp(18px,2vw,40px);   top:clamp(14px,2svh,26px);    right:auto;bottom:auto;
               width:min(660px,46vw); height:min(726px,calc(100svh - 96px))}
 .home-window {z-index:5;left:clamp(330px,26vw,420px);top:clamp(110px,15svh,180px); right:auto;bottom:auto;
-              width:min(760px,53vw); height:min(686px,calc(100svh - 200px))}
+              width:min(760px,53vw); height:min(647px,calc(100svh - 200px))}
 .snake-window{z-index:2;left:clamp(70px,7vw,120px);  bottom:clamp(58px,7svh,86px); right:auto;top:auto;
               width:min(530px,37vw); height:min(560px,calc(100svh - 300px))}
 .media-window{z-index:3;right:clamp(18px,2vw,40px);  top:clamp(26px,3.4svh,60px);  left:auto;bottom:auto;
@@ -772,7 +781,7 @@ button{font:inherit}
 @media (width>=1560px){
   /* Genis ekran: kullanicinin yerlestirdigi duzen, pencereler tam boyutta */
   .proj-window {left:clamp(30px,2.6vw,60px);  top:clamp(20px,2.4svh,34px);  width:700px; height:min(742px,calc(100svh - 300px))}
-  .home-window {left:clamp(430px,29vw,560px); top:clamp(150px,23svh,260px); width:800px; height:min(700px,calc(100svh - 380px))}
+  .home-window {left:clamp(430px,29vw,560px); top:clamp(150px,23svh,260px); width:800px; height:min(661px,calc(100svh - 380px))}
   .snake-window{left:clamp(90px,6.5vw,130px); bottom:clamp(58px,5.4svh,64px);width:530px; height:min(570px,calc(100svh - 500px))}
   .media-window{right:clamp(24px,2.2vw,44px); top:clamp(60px,7svh,86px);    width:490px; height:463px}
   .mon-window  {right:clamp(40px,3.2vw,64px); bottom:clamp(58px,5.4svh,64px);width:400px; height:min(460px,calc(100svh - 620px))}
@@ -849,7 +858,7 @@ button{font:inherit}
   <div class="desktop-wrap">
 
     <aside class="desktop-assistant" id="assistant">
-    <button class="assistant-character" id="assistantChar" type="button" aria-label="Asistana bir şey sor" title="Bir şey söylemek istiyor gibi">
+    <button class="assistant-character" id="assistantChar" type="button" aria-label="Ask the assistant" title="Bir şey söylemek istiyor gibi">
       <img id="assistantImg" width="240" height="180" alt="Animasyonlu ataç asistanı" draggable="false">
     </button>
   </aside>
@@ -863,9 +872,9 @@ button{font:inherit}
         <span class="window-actions">
           <span class="window-state-label">READ ONLY</span>
           <span class="window-buttons">
-            <button class="window-control" type="button" data-min="w-readme" aria-label="readme.md penceresini küçült">_</button>
-            <button class="window-control" type="button" data-max="w-readme" aria-label="readme.md penceresini büyüt">□</button>
-            <button class="window-control window-control-close" type="button" data-close="w-readme" aria-label="readme.md penceresini kapat">×</button>
+            <button class="window-control" type="button" data-min="w-readme" aria-label="Minimise readme.md">_</button>
+            <button class="window-control" type="button" data-max="w-readme" aria-label="Maximise readme.md">□</button>
+            <button class="window-control window-control-close" type="button" data-close="w-readme" aria-label="Close readme.md">×</button>
           </span>
         </span>
       </header>
@@ -875,27 +884,27 @@ button{font:inherit}
         <span class="address-status"><i></i>LOCAL</span>
       </div>
       <div class="ticker"><div class="ticker-track">
-        <span data-i18n="ticker">★ ENTERPRISE WEB APPS WITH .NET &amp; REACT ★ 1413 COMMITS ★ 17 PROJECTS ★ 2 MODS ON MODRINTH ★</span>
-        <span data-i18n="ticker">★ ENTERPRISE WEB APPS WITH .NET &amp; REACT ★ 1413 COMMITS ★ 17 PROJECTS ★ 2 MODS ON MODRINTH ★</span>
+        <span data-i18n="ticker">★ ENTERPRISE WEB APPS · .NET &amp; REACT ★ OPEN TO FREELANCE WORK ★ 1542 COMMITS ★ 17 PROJECTS ★ 2 MODS ON MODRINTH ★</span>
+        <span data-i18n="ticker">★ ENTERPRISE WEB APPS · .NET &amp; REACT ★ OPEN TO FREELANCE WORK ★ 1542 COMMITS ★ 17 PROJECTS ★ 2 MODS ON MODRINTH ★</span>
       </div></div>
       <div class="window-body single">
         <div class="main-column">
           <div class="panel intro-reveal">
-            <div class="panel-title"><span>ABOUT_ME.MD</span><span>TR</span></div>
+            <div class="panel-title"><span>ABOUT_ME.MD</span><span>IST</span></div>
             <div class="about-content">
-              <p class="eyebrow"><span></span><i data-i18n="rol">Software developer · Istanbul</i></p>
+              <p class="eyebrow"><span></span><i data-i18n="rol">Computer engineer · .NET &amp; React developer · Istanbul</i></p>
               <h1 class="name-heading">Yusuf <span class="name-accent">Erdoğdu</span></h1>
               <p class="description">
-<span data-i18n="ozet">I build enterprise web applications for universities — reservations, donation tracking, fleet and archive management. .NET on the API side, React on the interface. Minecraft mods and machine learning in my spare time.</span>
+<span data-i18n="ozet">I build the web applications a university runs on — reservations, donation tracking, fleet and archive management. .NET behind the API, React in front. Flutter apps, ML models and two Minecraft mods on the side.</span>
               </p>
               <div class="page-tags">
-                <span>.NET / C#</span><span>REACT · TS</span><span>FLUTTER</span>
-                <span>PYTHON · ML</span><span>EF CORE</span><span>BLAZOR</span><span>JAVA · FABRIC</span>
+                <span>.NET / C#</span><span>REACT · TS</span><span>EF CORE</span>
+                <span>BLAZOR</span><span>FLUTTER</span><span>PYTHON · ML</span><span>JAVA · FABRIC</span>
               </div>
             </div>
           </div>
           <div class="panel intro-reveal">
-            <div class="panel-title"><span>BOOKMARKS</span><span>4 ITEMS</span></div>
+            <div class="panel-title"><span>BOOKMARKS</span><span>3 ITEMS</span></div>
             <div class="contact-grid">
               <a class="contact-card tone-sky" href="https://github.com/Cazi-r" target="_blank" rel="noopener">
                 <span class="contact-icon">GH</span>
@@ -907,14 +916,9 @@ button{font:inherit}
                 <span class="contact-copy"><strong>Modrinth</strong><small data-i18n="modlar">published mods</small></span>
                 <span class="contact-arrow">↗</span>
               </a>
-              <a class="contact-card tone-coral" href="mailto:bitirmekeyteam@gmail.com">
+              <a class="contact-card tone-coral" href="mailto:yusuferd8239@gmail.com">
                 <span class="contact-icon">@</span>
-                <span class="contact-copy"><strong>E-posta</strong><small data-i18n="iletisim">contact</small></span>
-                <span class="contact-arrow">↗</span>
-              </a>
-              <a class="contact-card tone-lilac" href="https://www.linkedin.com/" target="_blank" rel="noopener">
-                <span class="contact-icon">in</span>
-                <span class="contact-copy"><strong>LinkedIn</strong><small data-i18n="linkEkle">add profile link</small></span>
+                <span class="contact-copy"><strong>Email</strong><small data-i18n="iletisim">contact</small></span>
                 <span class="contact-arrow">↗</span>
               </a>
             </div>
@@ -932,28 +936,28 @@ button{font:inherit}
         <span class="window-actions">
           <span class="window-state-label">LIVE</span>
           <span class="window-buttons">
-            <button class="window-control" type="button" data-min="w-activity" aria-label="activity.mon penceresini küçült">_</button>
-            <button class="window-control" type="button" data-max="w-activity" aria-label="activity.mon penceresini büyüt">□</button>
-            <button class="window-control window-control-close" type="button" data-close="w-activity" aria-label="activity.mon penceresini kapat">×</button>
+            <button class="window-control" type="button" data-min="w-activity" aria-label="Minimise activity.mon">_</button>
+            <button class="window-control" type="button" data-max="w-activity" aria-label="Maximise activity.mon">□</button>
+            <button class="window-control window-control-close" type="button" data-close="w-activity" aria-label="Close activity.mon">×</button>
           </span>
         </span>
       </header>
       <div class="address-strip">
         <span class="address-label">PROC</span>
-        <span class="address-field"><i class="address-icon mon-address-icon"></i>SYSTEM / REPOS / COMMIT_ACTIVITY</span>
+        <span class="address-field"><i class="address-icon mon-address-icon"></i>PERSONAL NODE / YUSUF / COMMIT_ACTIVITY</span>
         <span class="address-status"><i></i>ONLINE</span>
       </div>
       <div class="window-body single">
         <div class="panel">
           <div class="panel-title"><span>COMMIT_ACTIVITY.DAT</span><span>TOP 8</span></div>
           <div class="mon-head">
-            <div><span class="mon-total">1413</span><sub data-i18n="toplamCommit">TOTAL COMMITS</sub></div>
+            <div><span class="mon-total">1542</span><sub data-i18n="toplamCommit">TOTAL COMMITS</sub></div>
             <p class="mon-note"><span data-i18n="lgAcik">■ OPEN SOURCE</span><br><span data-i18n="lgOzel">■ PRIVATE</span></p>
           </div>
           <div class="procs" id="procs"></div>
         </div>
       </div>
-      <footer class="status-bar"><span><i></i>READY</span><span data-i18n="siraCommit">SORTED BY COMMITS</span><span>2026-08</span></footer>
+      <footer class="status-bar"><span><i></i>READY</span><span data-i18n="siraCommit">SORTED BY COMMITS</span><span id="monDate">2026-08</span></footer>
     </section>
 
     <!-- ========== projects/ ========== -->
@@ -964,9 +968,9 @@ button{font:inherit}
         <span class="window-actions">
           <span class="window-state-label" id="count-tag">17 ITEMS</span>
           <span class="window-buttons">
-            <button class="window-control" type="button" data-min="w-projects" aria-label="projects penceresini küçült">_</button>
-            <button class="window-control" type="button" data-max="w-projects" aria-label="projects penceresini büyüt">□</button>
-            <button class="window-control window-control-close" type="button" data-close="w-projects" aria-label="projects penceresini kapat">×</button>
+            <button class="window-control" type="button" data-min="w-projects" aria-label="Minimise projects">_</button>
+            <button class="window-control" type="button" data-max="w-projects" aria-label="Maximise projects">□</button>
+            <button class="window-control window-control-close" type="button" data-close="w-projects" aria-label="Close projects">×</button>
           </span>
         </span>
       </header>
@@ -975,7 +979,7 @@ button{font:inherit}
         <span class="address-field"><i class="address-icon"></i>PERSONAL NODE / YUSUF / PROJECTS</span>
         <span class="address-status"><i></i>MOUNTED</span>
       </div>
-      <div class="filters" role="group" aria-label="Projeleri filtrele">
+      <div class="filters" role="group" aria-label="Filter projects">
         <button class="filt" data-f="all" aria-pressed="true" data-i18n="fAll">ALL</button>
         <button class="filt" data-f="open" aria-pressed="false" data-i18n="fOpen">OPEN SOURCE</button>
         <button class="filt" data-f="closed" aria-pressed="false" data-i18n="fClosed">PRIVATE</button>
@@ -983,8 +987,8 @@ button{font:inherit}
         <button class="filt" data-f="mobile" aria-pressed="false" data-i18n="fMobile">MOBILE</button>
         <button class="filt" data-f="ml" aria-pressed="false">ML</button>
       </div>
-      <div class="window-body single" style="padding:0;background-image:none"><div class="fl-head"><span></span><span data-i18n="sutunAd">NAME</span><span data-i18n="sutunTek">TECH</span><span data-i18n="sutunCom">COMMITS</span><span data-i18n="sutunKay">SOURCE</span></div><div class="plist" id="plist" role="listbox" tabindex="0" aria-label="Proje listesi"></div></div><div class="fl-detail" id="flDetail"><p class="fl-empty" data-i18n="projeSec">Select a project</p></div>
-      <footer class="status-bar"><span><i></i>READY</span><span id="filter-state">FILTER: ALL</span><span data-i18n="kaynakYok">SOURCE NOT SHARED</span></footer>
+      <div class="window-body single" style="padding:0;background-image:none"><div class="fl-head"><span></span><span data-i18n="sutunAd">NAME</span><span data-i18n="sutunTek">TECH</span><span data-i18n="sutunCom">COMMITS</span><span data-i18n="sutunKay">SOURCE</span></div><div class="plist" id="plist" role="listbox" tabindex="0" aria-label="Project list"></div></div><div class="fl-detail" id="flDetail"><p class="fl-empty" data-i18n="projeSec">Select a project</p></div>
+      <footer class="status-bar"><span><i></i>READY</span><span id="filter-state">FILTER: ALL</span><span id="srcState">SOURCE CLOSED</span></footer>
     </section>
 
   <!-- ========== asistan ========== -->
@@ -992,26 +996,26 @@ button{font:inherit}
   <div class="assistant-bubble" id="assistantBubble" role="status" hidden>
     <div class="assistant-bubble-title" data-i18n="asistan">ASSISTANT</div>
     <p id="assistantText"></p>
-    <button class="assistant-dismiss" id="assistantDismiss" type="button"><span id="assistantDismissLabel">Tamam.</span></button>
+    <button class="assistant-dismiss" id="assistantDismiss" type="button"><span id="assistantDismissLabel">Got it.</span></button>
   </div>
 
     <!-- ========== snake.exe ========== -->
-    <section class="desktop-window browser-window snake-window" id="w-snake" aria-label="Snake oyunu">
+    <section class="desktop-window browser-window snake-window" id="w-snake" aria-label="Snake game">
       <div class="grain" aria-hidden="true"></div>
       <header class="window-bar" data-drag-handle>
         <span class="wordmark"><span class="app-icon snake-app-icon">S</span><span>snake.exe</span></span>
         <span class="window-actions">
           <span class="window-state-label" id="snakeState">READY</span>
           <span class="window-buttons">
-            <button class="window-control" type="button" data-min="w-snake" aria-label="snake.exe penceresini küçült">_</button>
-            <button class="window-control" type="button" data-max="w-snake" aria-label="snake.exe penceresini büyüt">□</button>
-            <button class="window-control window-control-close" type="button" data-close="w-snake" aria-label="snake.exe penceresini kapat">×</button>
+            <button class="window-control" type="button" data-min="w-snake" aria-label="Minimise snake.exe">_</button>
+            <button class="window-control" type="button" data-max="w-snake" aria-label="Maximise snake.exe">□</button>
+            <button class="window-control window-control-close" type="button" data-close="w-snake" aria-label="Close snake.exe">×</button>
           </span>
         </span>
       </header>
       <div class="address-strip">
         <span class="address-label">GAME</span>
-        <span class="address-field"><i class="address-icon"></i>PROGRAMS / GAMES / SNAKE.EXE</span>
+        <span class="address-field"><i class="address-icon"></i>PERSONAL NODE / YUSUF / SNAKE.EXE</span>
         <span class="address-status"><i></i>LOCAL</span>
       </div>
       <div class="snake-shell">
@@ -1023,8 +1027,8 @@ button{font:inherit}
         <div class="snake-content">
           <div class="snake-play-column">
             <div class="snake-screen" id="snakeScreen" tabindex="0"
-                 aria-label="Snake oyun alanı. Ok tuşlarıyla hareket, boşlukla duraklat.">
-              <canvas id="snakeCanvas" width="320" height="320">Tarayıcınız canvas desteklemiyor.</canvas>
+                 aria-label="Snake playfield. Arrow keys to move, space to pause.">
+              <canvas id="snakeCanvas" width="320" height="320">Your browser does not support canvas.</canvas>
               <div class="snake-display-dither" aria-hidden="true"></div>
               <div class="snake-overlay" id="snakeOverlay">
                 <p class="snake-overlay-kicker">SHAREWARE BUILD 1.0</p>
@@ -1051,40 +1055,40 @@ button{font:inherit}
     </section>
 
     <!-- ========== demo.player ========== -->
-    <section class="desktop-window browser-window media-window" id="w-video" aria-label="Demo video oynatıcı">
+    <section class="desktop-window browser-window media-window" id="w-video" aria-label="Demo video player">
       <div class="grain" aria-hidden="true"></div>
       <header class="window-bar" data-drag-handle>
         <span class="wordmark"><span class="app-icon media-app-icon">V</span><span>demo.player</span></span>
         <span class="window-actions">
           <span class="window-state-label" id="videoState">READY</span>
           <span class="window-buttons">
-            <button class="window-control" type="button" data-min="w-video" aria-label="demo.player penceresini küçült">_</button>
-            <button class="window-control" type="button" data-max="w-video" aria-label="demo.player penceresini büyüt">□</button>
-            <button class="window-control window-control-close" type="button" data-close="w-video" aria-label="demo.player penceresini kapat">×</button>
+            <button class="window-control" type="button" data-min="w-video" aria-label="Minimise demo.player">_</button>
+            <button class="window-control" type="button" data-max="w-video" aria-label="Maximise demo.player">□</button>
+            <button class="window-control window-control-close" type="button" data-close="w-video" aria-label="Close demo.player">×</button>
           </span>
         </span>
       </header>
       <div class="address-strip">
         <span class="address-label">FILE</span>
-        <span class="address-field"><i class="address-icon"></i>MEDIA NODE / YUSUF / DEMO.MP4</span>
+        <span class="address-field"><i class="address-icon"></i>PERSONAL NODE / YUSUF / DEMO.MP4</span>
         <span class="address-status"><i></i>LOCAL</span>
       </div>
       <div class="media-shell">
         <div class="video-frame">
-          <video id="demoVideo" src="demo.mp4" preload="metadata" playsinline aria-label="Proje demo videosu"></video>
+          <video id="demoVideo" src="demo.mp4" preload="metadata" playsinline aria-label="Project demo video"></video>
           <div class="video-placeholder" id="videoPlaceholder">
             <b data-i18n="videoYok">NO VIDEO SOURCE</b>
-            <span><span data-i18n="videoEkle">Add your own project demo:</span><br><code>&lt;video id="demoVideo" src="demo.mp4"&gt;</code></span>
+            <span data-i18n="videoEkle">The demo clip could not be loaded.</span>
           </div>
           <div class="video-scanlines" aria-hidden="true"></div>
-          <button class="video-overlay-play is-hidden" id="videoOverlayPlay" type="button" aria-label="Videoyu oynat">▶ VİDEOYU OYNAT</button>
+          <button class="video-overlay-play is-hidden" id="videoOverlayPlay" type="button" aria-label="Play video" data-i18n="oynat">▶ PLAY VIDEO</button>
         </div>
-        <div class="media-controls" aria-label="Video kontrolleri">
-          <button class="media-control-button" id="videoPlayBtn" type="button" aria-label="Oynat" disabled>▶</button>
+        <div class="media-controls" aria-label="Video controls">
+          <button class="media-control-button" id="videoPlayBtn" type="button" aria-label="Play" disabled>▶</button>
           <time class="video-time" id="videoCur" datetime="PT0S">00:00</time>
-          <input class="video-progress" id="videoProgress" type="range" min="0" max="0" step="0.01" value="0" aria-label="Video konumu" disabled>
+          <input class="video-progress" id="videoProgress" type="range" min="0" max="0" step="0.01" value="0" aria-label="Video position" disabled>
           <time class="video-time" id="videoDur" datetime="PT0S">00:00</time>
-          <button class="media-control-button" id="videoMuteBtn" type="button" aria-label="Sesi kapat" disabled>🔊</button>
+          <button class="media-control-button" id="videoMuteBtn" type="button" aria-label="Mute" disabled>🔊</button>
         </div>
         <footer class="media-status-bar">
           <span><i aria-hidden="true"></i><span id="videoState2">NO SOURCE</span></span>
@@ -1096,7 +1100,7 @@ button{font:inherit}
 
   </div>
 
-  <nav class="desktop-taskbar" aria-label="Açık pencereler">
+  <nav class="desktop-taskbar" aria-label="Open windows">
     <span class="taskbar-start">YE</span>
     <button class="taskbar-window-button is-active" data-t="w-readme" aria-pressed="true"><i class="taskbar-dot"></i>readme.md</button>
     <button class="taskbar-window-button is-active" data-t="w-activity" aria-pressed="true"><i class="taskbar-dot taskbar-dot-mon"></i>activity.mon</button>
@@ -1480,21 +1484,21 @@ const CLIP_DUR={"rest":100,"greet":4450,"tap":1150,"side":5610,"eyebrow":1500,"a
 /* ============ dil ============ */
 const I18N={
  tr:{
-  rol:"Yazılım geliştirici · İstanbul",
-  ozet:"Üniversiteler için kurumsal web uygulamaları yazıyorum — rezervasyon, bağış takibi, araç ve arşiv yönetimi. .NET tarafında API, React tarafında arayüz. Boş vakitte Minecraft modu ve makine öğrenmesi.",
-  modlar:"yayındaki modlar", iletisim:"iletişim", linkEkle:"profil linkini ekle",
+  rol:"Bilgisayar mühendisi · .NET & React geliştirici · İstanbul",
+  ozet:"Bir üniversitenin üstünde çalıştığı web uygulamalarını yazıyorum — rezervasyon, bağış takibi, araç ve arşiv yönetimi. API'de .NET, arayüzde React. Yanında Flutter, ML modelleri ve iki Minecraft modu.",
+  modlar:"yayındaki modlar", iletisim:"iletişim",
   sutunAd:"AD", sutunTek:"TEKNOLOJİ", sutunCom:"COMMIT", sutunKay:"KAYNAK",
   projeSec:"Bir proje seç",
   fAll:"TÜMÜ", fOpen:"AÇIK KAYNAK", fClosed:"KOD ÖZEL", fMobile:"MOBİL",
-  kaynakYok:"KAYNAK PAYLAŞILMAZ", toplamCommit:"TOPLAM COMMIT",
+  toplamCommit:"TOPLAM COMMIT",
   lgAcik:"■ AÇIK KAYNAK", lgOzel:"■ KOD ÖZEL", siraCommit:"COMMIT SAYISINA GÖRE",
   skor:"SKOR", rekor:"REKOR", cihazTablo:"CİHAZ TABLOSU",
-  snakeMsg:"Sinyal bloklarını topla. Kendi kuyruğunu yeme.",
+  snakeMsg:"Sinyal bloklarını topla. Kendi kuyruğun onlardan biri değil.",
   oyunBaslat:"OYUNU BAŞLAT", yeni:"YENİ", duraklat:"DURAKLAT",
   tuslar:"OK TUŞLARI · BOŞLUK DURAKLATIR", skorYok:"HENÜZ SKOR YOK", yerelKayit:"YEREL KAYIT",
-  videoYok:"VİDEO KAYNAĞI TANIMLI DEĞİL", videoEkle:"Kendi proje demonu ekle:",
+  videoYok:"VİDEO KAYNAĞI YOK", videoEkle:"Demo klip yüklenemedi.", oynat:"▶ VİDEOYU OYNAT",
   ipucu:"PENCERELERİ BAŞLIKTAN SÜRÜKLE", asistan:"ASİSTAN",
-  ticker:"★ .NET & REACT İLE KURUMSAL WEB UYGULAMALARI ★ 1413 COMMIT ★ 17 PROJE ★ MODRINTH'TE 2 MOD ★",
+  ticker:"★ KURUMSAL WEB UYGULAMALARI · .NET & REACT ★ SERBEST İŞE AÇIK ★ 1542 COMMIT ★ 17 PROJE ★ MODRINTH'TE 2 MOD ★",
   filtreEtiket:"FİLTRE: ", oyunBitti:"OYUN BİTTİ", tekrarOyna:"TEKRAR OYNA",
   skorMesaj:s=>"Skor "+s+". Tekrar denemek ister misin?", devam:"DEVAM",
   selam:{m:"Merhaba. Bu bir portfolyo masaüstü — pencereleri sürükle, projelere göz at.",d:"Tamam."},
@@ -1531,23 +1535,23 @@ function dilDegistir(l){
 
 /* ============ veri ============ */
 const PROJECTS=[
- {n:"Misafirhane",d:"Üniversite misafirhanesi için rezervasyon ve konaklama yönetimi.",dEn:"Reservation and accommodation management for a university guest house.",t:[".NET","C#","EF Core"],c:387,open:false,org:"IZU-Yazilim",live:null,tags:["dotnet"]},
- {n:"Ulaştırma",d:"Kurumsal araç filosu ve ulaştırma talep yönetimi.",dEn:"Corporate vehicle fleet and transport request management.",t:[".NET","React","TS"],c:267,open:false,org:"IZU-Yazilim",live:null,tags:["dotnet"]},
- {n:"exam-assistant",d:"Sınav süreçlerini yöneten web uygulaması. Bitirme projesi.",dEn:"Web application that runs exam processes. Capstone project.",t:["React","TS","SQL"],c:245,open:false,org:"KEY-Bitirme",live:null,tags:[]},
- {n:"Kütüphane",d:"Grup çalışma odası rezervasyon sistemi. Öğrenci oda türü ve saat seçer, sistem odayı otomatik atar; grup katılım koduyla katılır. Çok kuruma satılabilir on-premise ürün.",dEn:"Group study room reservation system for university libraries. The student picks a room type and time, the system assigns a room automatically, teammates join with a code. On-premise product sold to multiple institutions.",t:[".NET","React","TS"],c:214,open:false,org:"IZU-Yazilim",live:null,tags:["dotnet"]},
- {n:"AutomaticMemories",d:"Minecraft'ta belirli aralıklarla otomatik ekran görüntüsü alan mod.",dEn:"A mod that periodically takes automatic screenshots in Minecraft.",t:["Java","Fabric"],c:85,open:true,repo:"https://github.com/Cazi-r/AutomaticMemories",live:"https://modrinth.com/mod/automaticmemories",tags:[]},
- {n:"Hamilik",d:"İSZÜ Hamilik Projesi için bağışçı, taahhüt ve tahsilat takibi. Excel ile yürütülen süreci devraldı.",dEn:"Donor, pledge and collection tracking for the İSZÜ patronage programme. Took over a process previously run in Excel.",t:[".NET","Blazor"],c:68,open:false,org:"IZU-Yazilim",live:null,tags:["dotnet"]},
- {n:"zeminhub",d:"Geliştirici topluluğu platformu.",dEn:"Developer community platform.",t:["React","TS","Node"],c:58,open:false,org:"TARANA",live:null,tags:[]},
- {n:"Voxure",d:"Demografik profile göre filtrelenmiş anketler sunan oylama uygulaması. E-posta, Google ve GitHub ile giriş.",dEn:"Voting app serving surveys filtered by the voter's demographic profile. Sign-in with e-mail, Google or GitHub.",t:["Flutter","Firebase","Supabase"],c:58,open:true,repo:"https://github.com/Cazi-r/Voxure",live:null,tags:["mobile"]},
- {n:"Sekretarya",d:"Kurumsal sekretarya iş akışı ve evrak yönetimi.",dEn:"Corporate secretariat workflow and document management.",t:[".NET","React","TS"],c:55,open:false,org:"IZU-Yazilim",live:null,tags:["dotnet"]},
- {n:"UniversityProjectManagement",d:"Öğrenci bitirme projelerini uçtan uca yürüten platform: atama, aşama takibi, danışmanlık görüşmeleri, değerlendirme.",dEn:"Platform running student capstone projects end to end: assignment, stage tracking, supervision meetings, grading.",t:["ASP.NET 8","EF Core"],c:40,open:true,repo:"https://github.com/Cazi-r/UniversityProjectManagement",live:null,tags:["dotnet"]},
- {n:"Kütüphane Arşiv",d:"Kütüphane arşiv kayıtlarının dijital yönetimi.",dEn:"Digital management of library archive records.",t:[".NET","React","TS"],c:34,open:false,org:"IZU-Yazilim",live:null,tags:["dotnet"]},
- {n:"VoteApp",d:"Kullanıcı başına tek oy kuralı olan anket uygulaması. Hesaplar Firebase'de, oylar cihazda.",dEn:"Survey app with one-vote-per-user enforcement. Accounts in Firebase, votes on the device.",t:["Flutter","Firebase"],c:17,open:true,repo:"https://github.com/Cazi-r/VoteApp",live:null,tags:["mobile"]},
- {n:"WasteDetection",d:"Cihaz üstünde atık ayrıştırma. YOLOv8 → TFLite ile canlı kameradan cam, kâğıt, metal, pil, plastik tanıyor. İnternet gerekmiyor.",dEn:"On-device waste sorting. A YOLOv8 model exported to TFLite recognises glass, paper, metal, batteries and plastic from the live camera. No internet required.",t:["Flutter","YOLOv8","TFLite"],c:7,open:true,repo:"https://github.com/Cazi-r/WasteDetection",live:null,tags:["mobile","ml"]},
- {n:"TurkishMedicalNER",d:"Türkçe klinik diyalogda medikal varlık tanıma. Üç transformer karşılaştırıldı; en iyi F1 0.619.",dEn:"Medical named-entity recognition on Turkish clinical dialogue. Three transformers compared; best F1 0.619.",t:["Transformers","BERTurk"],c:2,open:true,repo:"https://github.com/Cazi-r/TurkishMedicalNER",live:null,tags:["ml"]},
- {n:"WaterPotability",d:"Kimyasal ölçümlerden içme suyu güvenliği tahmini. İki veri seti, yedi sınıflandırıcı; en iyi F1 0.896.",dEn:"Drinking-water safety prediction from chemical measurements. Two datasets, seven classifiers; best F1 0.896.",t:["scikit-learn","SMOTE"],c:2,open:true,repo:"https://github.com/Cazi-r/WaterPotability",live:"https://waterpotability-5zp2r7a5kcpbauvxjqsnfy.streamlit.app/",tags:["ml"]},
- {n:"ImdbSentimentAnalysis",d:"IMDB duygu analizi. TextCNN, LSTM ve BiLSTM karşılaştırması; TextCNN 0.871 doğrulukla önde.",dEn:"IMDB sentiment analysis. TextCNN, LSTM and BiLSTM compared; TextCNN leads at 0.871 accuracy.",t:["TensorFlow","Keras"],c:2,open:true,repo:"https://github.com/Cazi-r/ImdbSentimentAnalysis",live:null,tags:["ml"]},
- {n:"shared-list",d:"Minecraft'ta ortak yapılacaklar listesi. N tuşuyla açılan kitapta görevler eklenir, envanterden canlı sayılan hedefler konur, ilerleme anlık güncellenir.",dEn:"Co-op to-do list in Minecraft. A book opens with N: add tasks, set goals counted live from your inventory, everyone's progress updates instantly.",t:["Java","Fabric"],c:1,open:true,repo:"https://github.com/Cazi-r/shared-list",live:"https://modrinth.com/mod/shared-list",tags:[]}
+ {n:"Misafirhane",d:"Üniversite misafirhanesi için rezervasyon ve konaklama yönetimi — kayıt, doluluk ve bir konaklamanın ardında bıraktığı evrak. Listedeki en büyük iş; işin çoğunun istisna durumlar olduğu yer.",dEn:"Reservation and accommodation management for a university guest house — booking, occupancy and the paperwork a stay leaves behind. The largest thing on this list; most of the work turned out to be edge cases.",t:[".NET","C#","EF Core"],c:387,open:false,org:"IZU-Yazilim",live:null,tags:["dotnet"]},
+ {n:"Ulaştırma",d:"Kurumsal araç filosu ve ulaştırma talep yönetimi. Personel araç ister, talep onaylayacak kişiye ulaşır, filo tarafı hangi aracın nerede olduğunu tutar. Hâlâ hizmette.",dEn:"Corporate vehicle fleet and transport request management. Staff ask for a vehicle, the request reaches whoever approves it, and the fleet side keeps track of what is where. Still in service.",t:[".NET","React","TS"],c:267,open:false,org:"IZU-Yazilim",live:null,tags:["dotnet"]},
+ {n:"exam-assistant",d:"Sınav süreçlerini uçtan uca yürüten web uygulaması. Bitirme projem — gereksinimlerin başkasından geldiği ilk iş, zor kısmı da orasıydı.",dEn:"Web application that runs exam processes end to end. My capstone project — the first one where the requirements came from somebody else, which turned out to be the hard part.",t:["React","TS","SQL"],c:245,open:false,org:"KEY-Bitirme",live:null,tags:[]},
+ {n:"Kütüphane",d:"Üniversite kütüphaneleri için grup çalışma odası rezervasyon sistemi. Öğrenci oda türü ve saat seçer, sistem odayı otomatik atar, ekip katılım koduyla girer. Birden çok kuruma satılan on-premise ürün.",dEn:"Group study room reservation system for university libraries. The student picks a room type and time, the system assigns a room automatically, teammates join with a code. On-premise, sold to more than one institution.",t:[".NET","React","TS"],c:214,open:false,org:"IZU-Yazilim",live:null,tags:["dotnet"]},
+ {n:"AutomaticMemories",d:"Belirli aralıklarla kendiliğinden ekran görüntüsü alan Minecraft modu; uzun bir oturum, kimse F2'ye basmayı hatırlamadan kayıt bırakıyor.",dEn:"A Minecraft mod that takes screenshots on its own at a set interval, so a long session leaves a record without anyone remembering to press F2.",t:["Java","Fabric"],c:85,open:true,repo:"https://github.com/Cazi-r/AutomaticMemories",live:"https://modrinth.com/mod/automaticmemories",tags:[]},
+ {n:"Hamilik",d:"İSZÜ Hamilik Projesi için bağışçı, taahhüt ve tahsilat takibi. O güne kadar Excel'de yürüyen süreci devraldı — verinin yazılımdan daha dağınık olduğu türden bir taşıma.",dEn:"Donor, pledge and collection tracking for the İSZÜ patronage programme. Took over a process that until then lived in a spreadsheet — the kind of migration where the data is messier than the software.",t:[".NET","Blazor"],c:68,open:false,org:"IZU-Yazilim",live:null,tags:["dotnet"]},
+ {n:"zeminhub",d:"TARANA için yazılmış geliştirici topluluğu platformu — geliştiricilerin birbirini ve ürettiklerini bulduğu bir yer. Kaynağı kurumda, o yüzden burada link değil tarif var.",dEn:"Developer community platform built for TARANA — a place for developers to find each other and the things they make. The code stays with the client, so this one is a description rather than a link.",t:["React","TS","Node"],c:58,open:false,org:"TARANA",live:null,tags:[]},
+ {n:"Voxure",d:"Oylayanın demografik profiline göre anketleri filtreleyen uygulama; soru yalnızca gerçekten ilgilendirdiği kişilere gidiyor. E-posta, Google veya GitHub ile giriş.",dEn:"Voting app that filters surveys by the voter's demographic profile, so a question only reaches the people it is actually about. Sign in with e-mail, Google or GitHub.",t:["Flutter","Firebase","Supabase"],c:58,open:true,repo:"https://github.com/Cazi-r/Voxure",live:null,tags:["mobile"]},
+ {n:"Sekretarya",d:"Kurumsal sekretarya iş akışı ve evrak yönetimi — bir evrakın nereye gittiği, kimin gördüğü ve kimin masasında beklediği.",dEn:"Corporate secretariat workflow and document management — where a document goes, who has already seen it, and what is still waiting on somebody's desk.",t:[".NET","React","TS"],c:55,open:false,org:"IZU-Yazilim",live:null,tags:["dotnet"]},
+ {n:"UniversityProjectManagement",d:"Öğrenci bitirme projelerini uçtan uca yürüten platform: atama, aşama takibi, danışmanlık görüşmeleri, değerlendirme. Sınav işinin açık kaynak kuzeni — aynı alan, okunabilir kod.",dEn:"Platform running student capstone projects end to end: assignment, stage tracking, supervision meetings and grading. The open-source cousin of the exam work — same domain, code you can actually read.",t:["ASP.NET 8","EF Core"],c:40,open:true,repo:"https://github.com/Cazi-r/UniversityProjectManagement",live:null,tags:["dotnet"]},
+ {n:"Kütüphane Arşiv",d:"Kütüphane arşiv kayıtlarının dijital yönetimi — rafta ne olduğunu kataloglayıp bir şeyi bulmayı o gün kimin nöbette olduğuna bağlı olmaktan çıkarıyor.",dEn:"Digital management of library archive records — cataloguing what the shelves hold, so that finding something no longer depends on who is on shift that day.",t:[".NET","React","TS"],c:34,open:false,org:"IZU-Yazilim",live:null,tags:["dotnet"]},
+ {n:"VoteApp",d:"Kullanıcı başına tek oy kuralını uygulayan anket uygulaması. Hesaplar Firebase'de, oylar cihazda — Voxure'un sorduğu sorunun daha erken ve küçük cevabı.",dEn:"Survey app that enforces one vote per user. Accounts live in Firebase, the votes stay on the device — the earlier, smaller answer to the same question Voxure asks.",t:["Flutter","Firebase"],c:17,open:true,repo:"https://github.com/Cazi-r/VoteApp",live:null,tags:["mobile"]},
+ {n:"WasteDetection",d:"Cihaz üstünde atık ayrıştırma. TFLite'a aktarılmış YOLOv8 modeli canlı kameradan cam, kâğıt, metal, pil ve plastiği tanıyor; internet yok, telefondan hiçbir şey çıkmıyor.",dEn:"On-device waste sorting. A YOLOv8 model exported to TFLite recognises glass, paper, metal, batteries and plastic from the live camera, with no internet and nothing leaving the phone.",t:["Flutter","YOLOv8","TFLite"],c:7,open:true,repo:"https://github.com/Cazi-r/WasteDetection",live:null,tags:["mobile","ml"]},
+ {n:"TurkishMedicalNER",d:"Türkçe klinik diyalogda medikal varlık tanıma. Üç transformer karşılaştırıldı; en iyisi 0.619 F1 verdi — bu, modellerden çok Türkçe klinik metnin zorluğunu anlatıyor.",dEn:"Medical named-entity recognition on Turkish clinical dialogue. Three transformers compared; the best managed 0.619 F1, which says more about how hard Turkish clinical text is than about the models.",t:["Transformers","BERTurk"],c:2,open:true,repo:"https://github.com/Cazi-r/TurkishMedicalNER",live:null,tags:["ml"]},
+ {n:"WaterPotability",d:"Kimyasal ölçümlerden içme suyu güvenliği tahmini. İki veri seti, yedi sınıflandırıcı, en iyi F1 0.896 — ve kendi sayılarını girebilesin diye bir Streamlit sayfası.",dEn:"Drinking-water safety predicted from chemical measurements. Two datasets, seven classifiers, best F1 0.896 — and a Streamlit page so you can put your own numbers in.",t:["scikit-learn","SMOTE"],c:2,open:true,repo:"https://github.com/Cazi-r/WaterPotability",live:"https://waterpotability-5zp2r7a5kcpbauvxjqsnfy.streamlit.app/",tags:["ml"]},
+ {n:"ImdbSentimentAnalysis",d:"TextCNN, LSTM ve BiLSTM karşılaştırmalı IMDB duygu analizi. 0.871 doğrulukla TextCNN önde çıktı — başlarken beklediğim sonuç değildi.",dEn:"IMDB sentiment analysis with TextCNN, LSTM and BiLSTM compared. TextCNN led at 0.871 accuracy, which was not the answer I expected going in.",t:["TensorFlow","Keras"],c:2,open:true,repo:"https://github.com/Cazi-r/ImdbSentimentAnalysis",live:null,tags:["ml"]},
+ {n:"shared-list",d:"Minecraft içinde ortak yapılacaklar listesi. N tuşu bir kitap açıyor: görev ekle, envanterinden kendini sayan hedefler koy, sunucudaki herkes ilerlemeyi anlık görsün.",dEn:"Co-op to-do list inside Minecraft. N opens a book: add tasks, set goals that count themselves from your inventory, and everyone on the server watches the progress move.",t:["Java","Fabric"],c:1,open:true,repo:"https://github.com/Cazi-r/shared-list",live:"https://modrinth.com/mod/shared-list",tags:[]}
 ];
 
 const pAcik=p=>(DIL==="tr"?p.d:(p.dEn||p.d));
@@ -1585,10 +1589,12 @@ function selectRow(i,sessiz){
      <div class="stack">${p.t.map(t=>`<span class="tech">${esc(t)}</span>`).join("")}</div>
      <div class="fl-actions">
        ${p.repo?`<a class="go" href="${p.repo}" target="_blank" rel="noopener">REPO ↗</a>`:""}
-       ${p.live?`<a class="go live" href="${p.live}" target="_blank" rel="noopener">CANLI ↗</a>`:""}
+       ${p.live?`<a class="go live" href="${p.live}" target="_blank" rel="noopener">${DIL==="tr"?"CANLI":"LIVE"} ↗</a>`:""}
        ${!p.repo&&!p.live?`<span class="go na">${DIL==="tr"?"KAYNAK KAPALI":"SOURCE CLOSED"}</span>`:""}
        <span class="org">${p.org?esc(p.org)+" · ":""}${p.c} commit</span>
      </div>`;
+  const ss=document.getElementById("srcState");
+  if(ss) ss.textContent=p.open?(DIL==="tr"?"KAYNAK AÇIK":"SOURCE OPEN"):(DIL==="tr"?"KAYNAK KAPALI":"SOURCE CLOSED");
   if(!sessiz && typeof SND!=="undefined") SND.tick();
 }
 plist.addEventListener("click",e=>{
@@ -1938,6 +1944,10 @@ window.__yenidenCiz=function(){
 const langBtn=document.getElementById("lang");
 if(langBtn) langBtn.addEventListener("click",()=>{ dilDegistir(DIL==="tr"?"en":"tr"); if(window.SND) SND.tick(); });
 dilUygula();
+
+/* activity.mon tarihi kendini yazsin, elle guncellenmesin */
+(function(){ var d=document.getElementById("monDate");
+  if(d) d.textContent=new Date().toISOString().slice(0,7); })();
 
 const sndBtn=document.getElementById("snd");
 function sesDurum(v){
@@ -2346,7 +2356,7 @@ document.querySelectorAll(".contact-card,.go,.filt").forEach(a=>a.addEventListen
   });
   mute.addEventListener("click",function(){
     v.muted=!v.muted; mute.textContent=v.muted?"🔇":"🔊";
-    mute.setAttribute("aria-label",v.muted?"Sesi aç":"Sesi kapat");
+    mute.setAttribute("aria-label",v.muted?"Unmute":"Mute");
   });
 })();
 
@@ -2365,17 +2375,17 @@ document.querySelectorAll(".contact-card,.go,.filt").forEach(a=>a.addEventListen
 
   var LINES=[
     {m:"Pencereleri başlık çubuğundan sürükleyebilirsin. Çift tıklarsan büyür.",mEn:"You can drag windows by the title bar. Double-click to maximise.",d:"Denerim.",dEn:"I'll try.",a:"tap"},
-    {m:"activity.mon'daki çubuklar gerçek commit sayıları. Toplam 1413.",mEn:"The bars in activity.mon are real commit counts. 1413 in total.",d:"Fena değil.",dEn:"Not bad.",a:"think"},
-    {m:"Hardal renkli projelerin kodu özel: kurum yazılımı, kaynak paylaşılmıyor.",mEn:"Mustard-coloured projects are private: institutional software, source not shared.",d:"Anlaşıldı.",dEn:"Understood.",a:"side"},
-    {m:"projects/ penceresinden .NET, mobil veya ML diye filtreleyebilirsin.",mEn:"You can filter by .NET, mobile or ML in the projects/ window.",d:"Bakayım.",dEn:"Let me look.",a:"tap"},
-    {m:"Modrinth'te iki mod yayında: shared-list ve AutomaticMemories.",mEn:"Two mods are live on Modrinth: shared-list and AutomaticMemories.",d:"Güzel.",dEn:"Nice.",a:"congrats"},
-    {m:"En büyük proje Misafirhane: 387 commit.",mEn:"The largest project is Misafirhane: 387 commits.",d:"Vay.",dEn:"Wow.",a:"attention"},
+    {m:"projects/ penceresi .NET, mobil ve ML diye filtreliyor. .NET ile açılıyor.",mEn:"The projects/ window filters by .NET, mobile or ML. It opens on .NET.",d:"Bakayım.",dEn:"Let me look.",a:"tap"},
     {m:"SND düğmesi arayüz seslerini kapatır. Varsayılan açık ama hafif.",mEn:"The SND button mutes the interface sounds. It starts on, but quietly.",d:"İyi düşünülmüş.",dEn:"Well thought out.",a:"eyebrow"},
+    {m:"Hardal renkli projeler kurum işi. Kaynak müşterinin, benim değil.",mEn:"Mustard-coloured projects are client work. The source belongs to them, not to me.",d:"Anlaşıldı.",dEn:"Understood.",a:"side"},
+    {m:"Buradaki en büyüğü Misafirhane: bir üniversite misafirhanesinin rezervasyonları.",mEn:"The biggest one here is Misafirhane: reservations for a university guest house.",d:"Vay.",dEn:"Wow.",a:"attention"},
+    {m:"Kütüphane oda rezervasyonu birden çok kuruma satıldı. On-premise kurulum.",mEn:"The library room booking system sold to more than one institution. On-premise.",d:"Fena değil.",dEn:"Not bad.",a:"congrats"},
+    {m:"Modrinth'te iki mod yayında: shared-list ve AutomaticMemories.",mEn:"Two mods are live on Modrinth: shared-list and AutomaticMemories.",d:"Güzel.",dEn:"Nice.",a:"congrats"},
+    {m:"WasteDetection kamerayı çöpe tutunca ne olduğunu söylüyor. İnternet gerekmiyor.",mEn:"WasteDetection names a piece of rubbish when you point the camera at it. No internet needed.",d:"İyiymiş.",dEn:"That's good.",a:"scratch"},
+    {m:"Üç ML projesinin sayısı ortada. En iyi F1 0.896, su üstünde.",mEn:"Three ML projects here come with numbers. The best F1 is 0.896, on water.",d:"Mantıklı.",dEn:"Makes sense.",a:"think"},
+    {m:"Serbest iş alıyor: kurumsal web, .NET ve React. E-posta kartı readme.md'de.",mEn:"He takes freelance work: enterprise web, .NET and React. The e-mail card is in readme.md.",d:"Not aldım.",dEn:"Noted.",a:"wave"},
     {m:"Beni sürüklersen başka yere götürebilirsin. Hızlı sallarsan başım döner.",mEn:"Drag me somewhere else if you like. Shake me too fast and I get dizzy.",d:"Denemeyeceğim.",dEn:"I won't try that.",a:"wave"},
-    {m:"Bu arka plan bir WebGL shader. 4 saniyede bir kendini tekrar ediyor.",mEn:"This background is a WebGL shader. It loops every 4 seconds.",d:"Fark etmemiştim.",dEn:"Hadn't noticed.",a:"think"},
-    {m:"WasteDetection kamerayı çöpe tutunca ne olduğunu söylüyor. İnternet gerekmiyor.",mEn:"WasteDetection tells you what a piece of rubbish is when you point the camera at it. No internet needed.",d:"İyiymiş.",dEn:"That's good.",a:"scratch"},
-    {m:"İmlecin arkasında iz bırakıyor, dither ile soluyor. Fark ettin mi?",mEn:"Your cursor leaves a trail that fades through dithering. Did you notice?",d:"Şimdi ettim.",dEn:"I have now.",a:"eyebrow"},
-    {m:"Burada 17 proje var ama 9'unun kodu açık. Diğerleri kuruma ait.",mEn:"There are 17 projects here but only 9 have open code. The rest belong to institutions.",d:"Mantıklı.",dEn:"Makes sense.",a:"side"}
+    {m:"2026'da bir portfolyo sitesinde ataçım. İkimiz de bunu açıklamayacağız.",mEn:"I am a paperclip on a portfolio site in 2026. Neither of us is going to explain that.",d:"Olsun.",dEn:"Fair enough.",a:"think"}
   ];
 
   var closeT,autoT=0,deadline=0,remain=0,lastIdx=-1,idleT,dizzyT;
